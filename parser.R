@@ -1,8 +1,8 @@
 start <- 1
-end <- 10
-condition <- TRUE
+end <- 100
 Head<- scan("C:\\Users\\TekBots\ 1\\Desktop\\R-Parser\\2002\\checklists.csv",what="numeric",nlines=1,sep=',',skip=0,quiet=TRUE)
 outHead<-NULL
+outHead<-append(outHead,"INDEX")
 for (i in 1:19)
 {
 	outHead<-append(outHead,Head[i])
@@ -13,11 +13,13 @@ out <- append(out, list(outHead))
 for (i in start:end)
 {
 	Data <- scan("C:\\Users\\TekBots\ 1\\Desktop\\R-Parser\\2002\\checklists.csv",what="numeric",nlines=1,sep=',',skip=i,quiet=TRUE)
-	if(condition)
+	
+	if(Data[11]=="Pinellas")
 	{
 		line <- NULL
-		for(i in 1:19)
-			line <-append(line, Data[i])
+		line<-append(line, i+1)
+		for(j in 1:19)
+			line <-append(line, Data[j])
 		out <- append(out, list(line))
 	}
 }
