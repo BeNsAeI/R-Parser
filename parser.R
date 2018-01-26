@@ -1,5 +1,9 @@
-start <- 1
-end <- 500
+start <- as.integer(readline(prompt="Enter starting row: "))
+cat ("start set to: ",start)
+end <- as.integer(readline(prompt="Enter ending row: "))
+cat ("end set to: ",end)
+conditionIndex <- as.integer(readline(prompt="Enter the number of the column for condition (0 for no conditions): "))
+key <- readline(prompt="Enter Key: ")
 Head<- scan("C:\\Users\\TekBots\ 1\\Desktop\\R-Parser\\2002\\checklists.csv",what="numeric",nlines=1,sep=',',skip=0,quiet=TRUE)
 outHead<-NULL
 outHead<-append(outHead,"INDEX")
@@ -13,8 +17,7 @@ out <- append(out, list(outHead))
 for (i in start:end)
 {
 	Data <- scan("C:\\Users\\TekBots\ 1\\Desktop\\R-Parser\\2002\\checklists.csv",what="numeric",nlines=1,sep=',',skip=i,quiet=TRUE)
-	
-	if(Data[11]=="Pinellas")
+	if((Data[conditionIndex]==key) || (conditionIndex == 0))
 	{
 		line <- NULL
 		line<-append(line, i+1)
