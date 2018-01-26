@@ -1,5 +1,5 @@
 start <- 1
-end <- 100
+end <- 500
 Head<- scan("C:\\Users\\TekBots\ 1\\Desktop\\R-Parser\\2002\\checklists.csv",what="numeric",nlines=1,sep=',',skip=0,quiet=TRUE)
 outHead<-NULL
 outHead<-append(outHead,"INDEX")
@@ -26,4 +26,4 @@ for (i in start:end)
 numCols <- length(outHead)
 outMatrix <- matrix(unlist(out), ncol = numCols , byrow = TRUE)
 outMatrix 
-write.csv(outMatrix , file = "C:\\Users\\TekBots\ 1\\Desktop\\R-Parser\\Output.csv")
+write.table(outMatrix , file = "C:\\Users\\TekBots\ 1\\Desktop\\R-Parser\\Output.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")
