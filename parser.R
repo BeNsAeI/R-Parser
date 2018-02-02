@@ -4,6 +4,10 @@ end <- as.integer(readline(prompt="Enter ending row: "))
 cat ("end set to: ",end)
 conditionIndex <- as.integer(readline(prompt="Enter the number of the column for condition (0 for no conditions): "))
 key <- readline(prompt="Enter Key: ")
+start  = 1
+end = 500
+conditionIndex = 9
+key = "United States"
 Head<- scan("C:\\Users\\TekBots\ 1\\Desktop\\R-Parser\\2002\\checklists.csv",what="numeric",nlines=1,sep=',',skip=0,quiet=TRUE)
 outHead<-NULL
 outHead<-append(outHead,"INDEX")
